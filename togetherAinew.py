@@ -124,6 +124,8 @@ def generate_response(session, user_input, user_info):
         response_content += "\n\nIn the United States, there are many resources available for mental health support, including hotlines and online services. If you need immediate help, consider reaching out to a mental health professional."
     elif country == 'india':
         response_content += "\n\nIn India, there are several organizations that provide mental health support, including helplines and counseling services. It's important to reach out to these resources if you need assistance."
+    elif country == 'germany':
+        response_content += "\n\nIn Germany, there are numerous resources for mental health support, including helplines and counseling services. If you need help, consider reaching out to a mental health professional or a trusted organization."
     # Add more country-specific guidelines as needed
 
     session.append({"role": "assistant", "content": response_content})
@@ -170,7 +172,7 @@ def is_mental_health_related(input_text):
 
 # Function to handle user input and provide related follow-up questions
 def handle_user_input(session, user_input, related_questions, user_info):
-    if user_input.lower() in ['exit', 'quit', '1']:
+    if user_input.lower() in ['exit', 'quit']:
         print("Goodbye! Take care.")
         return True
 
@@ -202,12 +204,14 @@ def handle_user_input(session, user_input, related_questions, user_info):
         except ValueError:
             print("Invalid input. Please enter a number.")
     else:
-        print("Please provide more details or ask another question (type 'exit' to quit or 'scenario' to select another topic):")
+        print("Please provide more details or:")
+        print("1. Exit/Quit")
+        print("2. Ask another question")
         next_input = input("> ")
-        if next_input.lower() in ['exit', 'quit']:
+        if next_input.lower() in ['exit', 'quit', '1']:
             print("Goodbye! Take care.")
             return True
-        elif next_input.lower() == 'scenario':
+        elif next_input.lower() in ['2', 'ask another question']:
             return False
         else:
             return handle_user_input(session, next_input, {}, user_info)
@@ -278,7 +282,7 @@ def main():
     initial_scenarios = list(scenarios.keys())
     selected_scenario = display_options(initial_scenarios, allow_custom=True)
 
-    while selected_scenario and selected_scenario.lower() != "exit":
+    while selected_scenario and selected_scenario.lower() not in ["exit", "quit"]:
         if selected_scenario.lower() == "who are you":
             response = f"I am Neetanshi, your mental health expert. How can I assist you with your mental health today, {user_info['name']}?"
             print("Neetanshi:", response)
@@ -292,3 +296,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
