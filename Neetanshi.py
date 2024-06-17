@@ -26,6 +26,7 @@ mongo_client = MongoClient(mongo_uri)
 db = mongo_client["mental_health_chatbot"]
 users_collection = db["users"]
 feedback_collection = db["feedback"]
+ratings_collection = db["ratings"]
 
 # Secret key for session management (if needed)
 secret_key = "your_secret_key"
@@ -174,6 +175,8 @@ def is_mental_health_related(input_text):
 # Function to handle user input and provide related follow-up questions
 def handle_user_input(session, user_input, related_questions, user_info):
     if user_input.lower() in ['exit', 'quit']:
+        print("Thank you for using Neetanshi. Before you go, we would appreciate your feedback to help us improve.")
+        collect_rating_and_feedback(user_info['_id'])
         print("Goodbye! Take care.")
         return True
 
@@ -208,15 +211,13 @@ def handle_user_input(session, user_input, related_questions, user_info):
         print("Please provide more details or:")
         print("1. Exit/Quit")
         print("2. Ask another question")
-        print("3. Share feedback about the chatbot")
         next_input = input("> ")
         if next_input.lower() in ['exit', 'quit', '1']:
+            print("Thank you for using Neetanshi. Before you go, we would appreciate your feedback to help us improve.")
+            collect_rating_and_feedback(user_info['_id'])
             print("Goodbye! Take care.")
             return True
         elif next_input.lower() in ['2', 'ask another question']:
-            return False
-        elif next_input.lower() == '3':
-            collect_feedback(user_info['_id'])
             return False
         else:
             return handle_user_input(session, next_input, {}, user_info)
@@ -265,19 +266,41 @@ def collect_user_info(new_user=True):
     
     return user_info
 
-# Function to collect feedback from users
-def collect_feedback(user_id):
-    feedback = input("Please share your feedback about the chatbot:\n> ")
-    feedback_data = {
-        "user_id": user_id,
-        "feedback": feedback
-    }
-    try:
-        feedback_collection.insert_one(feedback_data)
-        print("Thank you for your feedback!")
-    except errors.PyMongoError as e:
-        logging.error(f"Error collecting feedback: {e}")
-        print("Sorry, there was an error collecting your feedback. Please try again later.")
+# Function to collect rating and feedback from users
+def collect_rating_and_feedback(user_id):
+    def collect_rating():
+        rating = input("Please rate your experience with the chatbot (1 to 5):\n> ")
+        try:
+            rating_value = int(rating)
+            if 1 <= rating_value <= 5:
+                rating_data = {
+                    "user_id": user_id,
+                    "rating": rating_value
+                }
+                ratings_collection.insert_one(rating_data)
+                print("Thank you for your rating!")
+            else:
+                print("Invalid rating. Please enter a number between 1 and 5.")
+                collect_rating()
+        except ValueError:
+            print("Invalid input. Please enter a number between 1 and 5.")
+            collect_rating()
+
+    def collect_feedback():
+        feedback = input("Please share your feedback about the chatbot:\n> ")
+        feedback_data = {
+            "user_id": user_id,
+            "feedback": feedback
+        }
+        try:
+            feedback_collection.insert_one(feedback_data)
+            print("Thank you for your feedback! Your feedback can make our service better for the future.")
+        except errors.PyMongoError as e:
+            logging.error(f"Error collecting feedback: {e}")
+            print("Sorry, there was an error collecting your feedback. Please try again later.")
+
+    collect_rating()
+    collect_feedback()
 
 # Main interaction loop
 def main():
@@ -309,10 +332,9 @@ def main():
         else:
             should_exit = handle_user_input(session, selected_scenario, scenarios.get(selected_scenario, {}), user_info)
             if should_exit:
-                break
+                return
 
     print("Goodbye! Take care.")
 
 if __name__ == "__main__":
     main()
-
