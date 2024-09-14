@@ -1,0 +1,680 @@
+{
+    "scenarios": {
+        "I am feeling very anxious lately.": {
+            "visible": "I am feeling very anxious lately.",
+            "prompt": "User is feeling very anxious lately",
+            "sub_scenarios": {
+                "Can you tell me more about what is making you feel anxious?": {
+                    "visible": "Can you tell me more about what is making you feel anxious?",
+                    "prompt": "User wants to share more about what is making them feel anxious",
+                    "nested_sub_scenarios": {
+                        "Is it related to work or personal life?": {
+                            "visible": "Is it related to work or personal life?",
+                            "prompt": "User's anxiety is related to work or personal life",
+                            "further_nested_sub_scenarios": {
+                                "Work": {
+                                    "visible": "Work",
+                                    "prompt": "User's anxiety is related to work",
+                                    "deeply_nested_sub_scenarios": {
+                                        "High workload": {
+                                            "visible": "High workload",
+                                            "prompt": "User's anxiety is related to high workload",
+                                            "sub_scenarios": {}
+                                        },
+                                        "Tight deadlines": {
+                                            "visible": "Tight deadlines",
+                                            "prompt": "User's anxiety is related to tight deadlines",
+                                            "sub_scenarios": {}
+                                        }
+                                    }
+                                },
+                                "Personal life": {
+                                    "visible": "Personal life",
+                                    "prompt": "User's anxiety is related to personal life",
+                                    "deeply_nested_sub_scenarios": {
+                                        "Family issues": {
+                                            "visible": "Family issues",
+                                            "prompt": "User's anxiety is related to family issues",
+                                            "sub_scenarios": {}
+                                        },
+                                        "Relationship issues": {
+                                            "visible": "Relationship issues",
+                                            "prompt": "User's anxiety is related to relationship issues",
+                                            "sub_scenarios": {}
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "Do you experience physical symptoms as well?": {
+                            "visible": "Do you experience physical symptoms as well?",
+                            "prompt": "User experiences physical symptoms along with anxiety",
+                            "further_nested_sub_scenarios": {
+                                "Yes": {
+                                    "visible": "Yes",
+                                    "prompt": "User experiences physical symptoms",
+                                    "deeply_nested_sub_scenarios": {
+                                        "Racing heart": {
+                                            "visible": "Racing heart",
+                                            "prompt": "User experiences racing heart",
+                                            "sub_scenarios": {}
+                                        },
+                                        "Sweating": {
+                                            "visible": "Sweating",
+                                            "prompt": "User experiences sweating",
+                                            "sub_scenarios": {}
+                                        }
+                                    }
+                                },
+                                "No": {
+                                    "visible": "No",
+                                    "prompt": "User does not experience physical symptoms",
+                                    "deeply_nested_sub_scenarios": {
+                                        "Mental symptoms": {
+                                            "visible": "Mental symptoms",
+                                            "prompt": "User experiences mental symptoms",
+                                            "sub_scenarios": {}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "How long have you been feeling this way?": {
+                    "visible": "How long have you been feeling this way?",
+                    "prompt": "User is asked how long they have been feeling this way",
+                    "nested_sub_scenarios": {
+                        "A few days": {
+                            "visible": "A few days",
+                            "prompt": "User has been feeling anxious for a few days",
+                            "sub_scenarios": {}
+                        },
+                        "More than a week": {
+                            "visible": "More than a week",
+                            "prompt": "User has been feeling anxious for more than a week",
+                            "sub_scenarios": {}
+                        }
+                    }
+                }
+            }
+        },
+        "I am having trouble sleeping at night.": {
+            "visible": "I am having trouble sleeping at night.",
+            "prompt": "User is having trouble sleeping at night",
+            "sub_scenarios": {
+                "Have you noticed any patterns or habits that might be affecting your sleep?": {
+                    "visible": "Have you noticed any patterns or habits that might be affecting your sleep?",
+                    "prompt": "User is asked about patterns or habits affecting sleep",
+                    "nested_sub_scenarios": {
+                        "Caffeine intake": {
+                            "visible": "Caffeine intake",
+                            "prompt": "User's sleep trouble might be related to caffeine intake",
+                            "sub_scenarios": {}
+                        },
+                        "Screen time before bed": {
+                            "visible": "Screen time before bed",
+                            "prompt": "User's sleep trouble might be related to screen time before bed",
+                            "sub_scenarios": {}
+                        }
+                    }
+                },
+                "Do you feel stressed or worried when you go to bed?": {
+                    "visible": "Do you feel stressed or worried when you go to bed?",
+                    "prompt": "User feels stressed or worried when going to bed",
+                    "nested_sub_scenarios": {
+                        "Yes, very stressed": {
+                            "visible": "Yes, very stressed",
+                            "prompt": "User feels very stressed when going to bed",
+                            "sub_scenarios": {}
+                        },
+                        "No, just can't sleep": {
+                            "visible": "No, just can't sleep",
+                            "prompt": "User just can't sleep without feeling stressed",
+                            "sub_scenarios": {}
+                        }
+                    }
+                }
+            }
+        },
+        "I feel overwhelmed with my workload.": {
+            "visible": "I feel overwhelmed with my workload.",
+            "prompt": "User feels overwhelmed with their workload",
+            "sub_scenarios": {
+                "What tasks are causing you the most stress?": {
+                    "visible": "What tasks are causing you the most stress?",
+                    "prompt": "User is asked about tasks causing the most stress",
+                    "nested_sub_scenarios": {
+                        "High-priority tasks": {
+                            "visible": "High-priority tasks",
+                            "prompt": "High-priority tasks are causing the most stress for the user",
+                            "sub_scenarios": {}
+                        },
+                        "Volume of tasks": {
+                            "visible": "Volume of tasks",
+                            "prompt": "The volume of tasks is causing the most stress for the user",
+                            "sub_scenarios": {}
+                        }
+                    }
+                },
+                "How do you currently manage your workload?": {
+                    "visible": "How do you currently manage your workload?",
+                    "prompt": "User is asked how they currently manage their workload",
+                    "nested_sub_scenarios": {
+                        "Prioritization": {
+                            "visible": "Prioritization",
+                            "prompt": "User manages workload by prioritization",
+                            "sub_scenarios": {}
+                        },
+                        "Time management": {
+                            "visible": "Time management",
+                            "prompt": "User manages workload by time management",
+                            "sub_scenarios": {}
+                        }
+                    }
+                }
+            }
+        },
+        "I am experiencing relationship problems.": {
+            "visible": "I am experiencing relationship problems.",
+            "prompt": "User is experiencing relationship problems",
+            "sub_scenarios": {
+                "Can you describe the issues you are facing in your relationship?": {
+                    "visible": "Can you describe the issues you are facing in your relationship?",
+                    "prompt": "User is asked to describe the issues in their relationship",
+                    "nested_sub_scenarios": {
+                        "Communication issues": {
+                            "visible": "Communication issues",
+                            "prompt": "User is experiencing communication issues in their relationship",
+                            "sub_scenarios": {}
+                        },
+                        "Trust issues": {
+                            "visible": "Trust issues",
+                            "prompt": "User is experiencing trust issues in their relationship",
+                            "sub_scenarios": {}
+                        }
+                    }
+                },
+                "How long have you been experiencing these problems?": {
+                    "visible": "How long have you been experiencing these problems?",
+                    "prompt": "User is asked how long they have been experiencing these problems",
+                    "nested_sub_scenarios": {
+                        "Recently": {
+                            "visible": "Recently",
+                            "prompt": "User has been experiencing relationship problems recently",
+                            "sub_scenarios": {}
+                        },
+                        "For a long time": {
+                            "visible": "For a long time",
+                            "prompt": "User has been experiencing relationship problems for a long time",
+                            "sub_scenarios": {}
+                        }
+                    }
+                }
+            }
+        },
+        "I have been feeling very lonely and isolated.": {
+            "visible": "I have been feeling very lonely and isolated.",
+            "prompt": "User has been feeling very lonely and isolated",
+            "sub_scenarios": {
+                "Have you been able to connect with friends or family?": {
+                    "visible": "Have you been able to connect with friends or family?",
+                    "prompt": "User is asked if they have been able to connect with friends or family",
+                    "nested_sub_scenarios": {
+                        "Yes, but still feel lonely": {
+                            "visible": "Yes, but still feel lonely",
+                            "prompt": "User has connected with friends or family but still feels lonely",
+                            "sub_scenarios": {}
+                        },
+                        "No, I haven't tried": {
+                            "visible": "No, I haven't tried",
+                            "prompt": "User hasn't tried to connect with friends or family",
+                            "sub_scenarios": {}
+                        }
+                    }
+                },
+                "What activities do you enjoy that might help you feel less isolated?": {
+                    "visible": "What activities do you enjoy that might help you feel less isolated?",
+                    "prompt": "User is asked about activities they enjoy that might help them feel less isolated",
+                    "nested_sub_scenarios": {
+                        "Hobbies": {
+                            "visible": "Hobbies",
+                            "prompt": "User enjoys hobbies that might help them feel less isolated",
+                            "sub_scenarios": {}
+                        },
+                        "Social gatherings": {
+                            "visible": "Social gatherings",
+                            "prompt": "User enjoys social gatherings that might help them feel less isolated",
+                            "sub_scenarios": {}
+                        }
+                    }
+                }
+            }
+        },
+        "I am struggling with depression.": {
+            "visible": "I am struggling with depression.",
+            "prompt": "User is struggling with depression",
+            "sub_scenarios": {
+                "Have you been feeling down or hopeless?": {
+                    "visible": "Have you been feeling down or hopeless?",
+                    "prompt": "User is asked if they have been feeling down or hopeless",
+                    "nested_sub_scenarios": {
+                        "Yes": {
+                            "visible": "Yes",
+                            "prompt": "User has been feeling down or hopeless",
+                            "sub_scenarios": {
+                                "How long have you been feeling this way?": {
+                                    "visible": "How long have you been feeling this way?",
+                                    "prompt": "User is asked how long they have been feeling this way",
+                                    "nested_sub_scenarios": {
+                                        "A few days": {
+                                            "visible": "A few days",
+                                            "prompt": "User has been feeling down or hopeless for a few days",
+                                            "sub_scenarios": {}
+                                        },
+                                        "More than two weeks": {
+                                            "visible": "More than two weeks",
+                                            "prompt": "User has been feeling down or hopeless for more than two weeks",
+                                            "sub_scenarios": {}
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "No": {
+                            "visible": "No",
+                            "prompt": "User has not been feeling down or hopeless",
+                            "sub_scenarios": {
+                                "What specific thoughts or feelings are you experiencing?": {
+                                    "visible": "What specific thoughts or feelings are you experiencing?",
+                                    "prompt": "User is asked about specific thoughts or feelings they are experiencing",
+                                    "sub_scenarios": {}
+                                }
+                            }
+                        }
+                    }
+                },
+                "Are you having trouble enjoying activities you used to like?": {
+                    "visible": "Are you having trouble enjoying activities you used to like?",
+                    "prompt": "User is asked if they are having trouble enjoying activities they used to like",
+                    "nested_sub_scenarios": {
+                        "Yes": {
+                            "visible": "Yes",
+                            "prompt": "User is having trouble enjoying activities they used to like",
+                            "sub_scenarios": {
+                                "Can you tell me more about what has changed?": {
+                                    "visible": "Can you tell me more about what has changed?",
+                                    "prompt": "User is asked to share more about what has changed",
+                                    "sub_scenarios": {}
+                                }
+                            }
+                        },
+                        "No": {
+                            "visible": "No",
+                            "prompt": "User is not having trouble enjoying activities they used to like",
+                            "sub_scenarios": {
+                                "Have there been any other changes in your life recently?": {
+                                    "visible": "Have there been any other changes in your life recently?",
+                                    "prompt": "User is asked about other changes in their life recently",
+                                    "sub_scenarios": {}
+                                }
+                            }
+                        }
+                    }
+                },
+                "Do you find it hard to get out of bed or start your day?": {
+                    "visible": "Do you find it hard to get out of bed or start your day?",
+                    "prompt": "User is asked if they find it hard to get out of bed or start their day",
+                    "nested_sub_scenarios": {
+                        "Yes": {
+                            "visible": "Yes",
+                            "prompt": "User finds it hard to get out of bed or start their day",
+                            "sub_scenarios": {
+                                "What helps you to eventually get started?": {
+                                    "visible": "What helps you to eventually get started?",
+                                    "prompt": "User is asked what helps them to eventually get started",
+                                    "sub_scenarios": {}
+                                }
+                            }
+                        },
+                        "No": {
+                            "visible": "No",
+                            "prompt": "User does not find it hard to get out of bed or start their day",
+                            "sub_scenarios": {
+                                "What keeps you motivated?": {
+                                    "visible": "What keeps you motivated?",
+                                    "prompt": "User is asked what keeps them motivated",
+                                    "sub_scenarios": {}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "I am experiencing panic attacks.": {
+            "visible": "I am experiencing panic attacks.",
+            "prompt": "User is experiencing panic attacks",
+            "sub_scenarios": {
+                "Can you describe what happens during a panic attack?": {
+                    "visible": "Can you describe what happens during a panic attack?",
+                    "prompt": "User is asked to describe what happens during a panic attack",
+                    "nested_sub_scenarios": {
+                        "Physical symptoms": {
+                            "visible": "Physical symptoms",
+                            "prompt": "User experiences physical symptoms during a panic attack",
+                            "deeply_nested_sub_scenarios": {
+                                "What physical symptoms do you experience?": {
+                                    "visible": "What physical symptoms do you experience?",
+                                    "prompt": "User is asked what physical symptoms they experience",
+                                    "sub_scenarios": {
+                                        "Racing heart": {
+                                            "visible": "Racing heart",
+                                            "prompt": "User experiences racing heart during a panic attack",
+                                            "sub_scenarios": {}
+                                        },
+                                        "Shortness of breath": {
+                                            "visible": "Shortness of breath",
+                                            "prompt": "User experiences shortness of breath during a panic attack",
+                                            "sub_scenarios": {}
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "Emotional symptoms": {
+                            "visible": "Emotional symptoms",
+                            "prompt": "User experiences emotional symptoms during a panic attack",
+                            "deeply_nested_sub_scenarios": {
+                                "What emotional symptoms do you experience?": {
+                                    "visible": "What emotional symptoms do you experience?",
+                                    "prompt": "User is asked what emotional symptoms they experience",
+                                    "sub_scenarios": {
+                                        "Fear": {
+                                            "visible": "Fear",
+                                            "prompt": "User experiences fear during a panic attack",
+                                            "sub_scenarios": {}
+                                        },
+                                        "Dread": {
+                                            "visible": "Dread",
+                                            "prompt": "User experiences dread during a panic attack",
+                                            "sub_scenarios": {}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "How often do you experience panic attacks?": {
+                    "visible": "How often do you experience panic attacks?",
+                    "prompt": "User is asked how often they experience panic attacks",
+                    "nested_sub_scenarios": {
+                        "Daily": {
+                            "visible": "Daily",
+                            "prompt": "User experiences panic attacks daily",
+                            "sub_scenarios": {}
+                        },
+                        "Weekly": {
+                            "visible": "Weekly",
+                            "prompt": "User experiences panic attacks weekly",
+                            "sub_scenarios": {}
+                        },
+                        "Occasionally": {
+                            "visible": "Occasionally",
+                            "prompt": "User experiences panic attacks occasionally",
+                            "sub_scenarios": {}
+                        }
+                    }
+                },
+                "What coping strategies have you tried?": {
+                    "visible": "What coping strategies have you tried?",
+                    "prompt": "User is asked what coping strategies they have tried",
+                    "nested_sub_scenarios": {
+                        "Breathing exercises": {
+                            "visible": "Breathing exercises",
+                            "prompt": "User has tried breathing exercises to cope with panic attacks",
+                            "sub_scenarios": {}
+                        },
+                        "Grounding techniques": {
+                            "visible": "Grounding techniques",
+                            "prompt": "User has tried grounding techniques to cope with panic attacks",
+                            "sub_scenarios": {}
+                        },
+                        "None": {
+                            "visible": "None",
+                            "prompt": "User has not tried any coping strategies for panic attacks",
+                            "sub_scenarios": {}
+                        }
+                    }
+                }
+            }
+        },
+        "I have been feeling very sad recently.": {
+            "visible": "I have been feeling very sad recently.",
+            "prompt": "User has been feeling very sad recently",
+            "sub_scenarios": {
+                "Do you know what is making you feel sad?": {
+                    "visible": "Do you know what is making you feel sad?",
+                    "prompt": "User is asked if they know what is making them feel sad",
+                    "nested_sub_scenarios": {
+                        "Yes": {
+                            "visible": "Yes",
+                            "prompt": "User knows what is making them feel sad",
+                            "sub_scenarios": {
+                                "Can you share more about what is causing these feelings?": {
+                                    "visible": "Can you share more about what is causing these feelings?",
+                                    "prompt": "User is asked to share more about what is causing these feelings",
+                                    "sub_scenarios": {}
+                                }
+                            }
+                        },
+                        "No": {
+                            "visible": "No",
+                            "prompt": "User does not know what is making them feel sad",
+                            "sub_scenarios": {
+                                "Is there a particular time of day or activity that triggers your sadness?": {
+                                    "visible": "Is there a particular time of day or activity that triggers your sadness?",
+                                    "prompt": "User is asked if there is a particular time of day or activity that triggers their sadness",
+                                    "sub_scenarios": {}
+                                }
+                            }
+                        }
+                    }
+                },
+                "How long have you been feeling this way?": {
+                    "visible": "How long have you been feeling this way?",
+                    "prompt": "User is asked how long they have been feeling this way",
+                    "nested_sub_scenarios": {
+                        "A few days": {
+                            "visible": "A few days",
+                            "prompt": "User has been feeling sad for a few days",
+                            "sub_scenarios": {}
+                        },
+                        "Several weeks": {
+                            "visible": "Several weeks",
+                            "prompt": "User has been feeling sad for several weeks",
+                            "sub_scenarios": {}
+                        },
+                        "Months": {
+                            "visible": "Months",
+                            "prompt": "User has been feeling sad for months",
+                            "sub_scenarios": {}
+                        }
+                    }
+                },
+                "Have you talked to anyone about how you're feeling?": {
+                    "visible": "Have you talked to anyone about how you're feeling?",
+                    "prompt": "User is asked if they have talked to anyone about how they are feeling",
+                    "nested_sub_scenarios": {
+                        "Yes": {
+                            "visible": "Yes",
+                            "prompt": "User has talked to someone about how they are feeling",
+                            "sub_scenarios": {
+                                "Who did you talk to and how did it go?": {
+                                    "visible": "Who did you talk to and how did it go?",
+                                    "prompt": "User is asked who they talked to and how it went",
+                                    "sub_scenarios": {}
+                                }
+                            }
+                        },
+                        "No": {
+                            "visible": "No",
+                            "prompt": "User has not talked to anyone about how they are feeling",
+                            "sub_scenarios": {
+                                "Is there someone you feel comfortable talking to?": {
+                                    "visible": "Is there someone you feel comfortable talking to?",
+                                    "prompt": "User is asked if there is someone they feel comfortable talking to",
+                                    "sub_scenarios": {}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "I feel like I'm not good enough.": {
+            "visible": "I feel like I'm not good enough.",
+            "prompt": "User feels like they are not good enough",
+            "sub_scenarios": {
+                "What makes you feel this way?": {
+                    "visible": "What makes you feel this way?",
+                    "prompt": "User is asked what makes them feel this way",
+                    "nested_sub_scenarios": {
+                        "Work": {
+                            "visible": "Work",
+                            "prompt": "User feels not good enough due to work",
+                            "sub_scenarios": {}
+                        },
+                        "Relationships": {
+                            "visible": "Relationships",
+                            "prompt": "User feels not good enough due to relationships",
+                            "sub_scenarios": {}
+                        },
+                        "Personal expectations": {
+                            "visible": "Personal expectations",
+                            "prompt": "User feels not good enough due to personal expectations",
+                            "sub_scenarios": {}
+                        }
+                    }
+                },
+                "How do you usually deal with these feelings?": {
+                    "visible": "How do you usually deal with these feelings?",
+                    "prompt": "User is asked how they usually deal with these feelings",
+                    "nested_sub_scenarios": {
+                        "Talking to friends": {
+                            "visible": "Talking to friends",
+                            "prompt": "User deals with these feelings by talking to friends",
+                            "sub_scenarios": {}
+                        },
+                        "Journaling": {
+                            "visible": "Journaling",
+                            "prompt": "User deals with these feelings by journaling",
+                            "sub_scenarios": {}
+                        },
+                        "Keeping it to myself": {
+                            "visible": "Keeping it to myself",
+                            "prompt": "User deals with these feelings by keeping it to themselves",
+                            "sub_scenarios": {}
+                        }
+                    }
+                },
+                "What do you do to take care of yourself?": {
+                    "visible": "What do you do to take care of yourself?",
+                    "prompt": "User is asked what they do to take care of themselves",
+                    "nested_sub_scenarios": {
+                        "Exercise": {
+                            "visible": "Exercise",
+                            "prompt": "User takes care of themselves by exercising",
+                            "sub_scenarios": {}
+                        },
+                        "Hobbies": {
+                            "visible": "Hobbies",
+                            "prompt": "User takes care of themselves through hobbies",
+                            "sub_scenarios": {}
+                        },
+                        "Relaxation techniques": {
+                            "visible": "Relaxation techniques",
+                            "prompt": "User takes care of themselves using relaxation techniques",
+                            "sub_scenarios": {}
+                        }
+                    }
+                }
+            }
+        },
+        "I am dealing with grief and loss.": {
+            "visible": "I am dealing with grief and loss.",
+            "prompt": "User is dealing with grief and loss",
+            "sub_scenarios": {
+                "Who or what have you lost?": {
+                    "visible": "Who or what have you lost?",
+                    "prompt": "User is asked who or what they have lost",
+                    "nested_sub_scenarios": {
+                        "Loved one": {
+                            "visible": "Loved one",
+                            "prompt": "User has lost a loved one",
+                            "sub_scenarios": {}
+                        },
+                        "Pet": {
+                            "visible": "Pet",
+                            "prompt": "User has lost a pet",
+                            "sub_scenarios": {}
+                        },
+                        "Job or opportunity": {
+                            "visible": "Job or opportunity",
+                            "prompt": "User has lost a job or opportunity",
+                            "sub_scenarios": {}
+                        }
+                    }
+                },
+                "How have you been coping with your loss?": {
+                    "visible": "How have you been coping with your loss?",
+                    "prompt": "User is asked how they have been coping with their loss",
+                    "nested_sub_scenarios": {
+                        "Talking to family or friends": {
+                            "visible": "Talking to family or friends",
+                            "prompt": "User has been coping by talking to family or friends",
+                            "sub_scenarios": {}
+                        },
+                        "Professional counseling": {
+                            "visible": "Professional counseling",
+                            "prompt": "User has been coping through professional counseling",
+                            "sub_scenarios": {}
+                        },
+                        "Trying to stay busy": {
+                            "visible": "Trying to stay busy",
+                            "prompt": "User has been coping by trying to stay busy",
+                            "sub_scenarios": {}
+                        }
+                    }
+                },
+                "How long has it been since your loss?": {
+                    "visible": "How long has it been since your loss?",
+                    "prompt": "User is asked how long it has been since their loss",
+                    "nested_sub_scenarios": {
+                        "A few days": {
+                            "visible": "A few days",
+                            "prompt": "It has been a few days since user's loss",
+                            "sub_scenarios": {}
+                        },
+                        "Weeks": {
+                            "visible": "Weeks",
+                            "prompt": "It has been weeks since user's loss",
+                            "sub_scenarios": {}
+                        },
+                        "Months": {
+                            "visible": "Months",
+                            "prompt": "It has been months since user's loss",
+                            "sub_scenarios": {}
+                        },
+                        "Years": {
+                            "visible": "Years",
+                            "prompt": "It has been years since user's loss",
+                            "sub_scenarios": {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
